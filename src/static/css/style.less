@@ -1,0 +1,369 @@
+@nav: #666;
+@titlebg: #BBE5CA;
+@green: #0A6146;
+@footer: #EAEAEA;
+@border: #DADADA;
+@white: white;
+@title: #5B5B5B;
+@p: #757575;
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+a {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.flex-1 {
+    flex: 1;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear::after {
+    clear: both;
+    display: block;
+    content: '';
+    overflow: hidden;
+    height: 0;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.font-hide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+.morefont {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    // -webkit-line-clamp: 2;
+}
+
+.container {
+    max-width: 1120px;
+    min-width: 1100px;
+    margin: 0 auto;
+    display: block;
+}
+
+
+/*---------------------nav---------------*/
+.nav {
+    padding: 10px 0;
+
+    .logo {
+        display: block;
+
+        img {
+            width: 136px;
+        }
+    }
+
+    .navlist {
+        min-width: 900px;
+        height: 59px;
+        text-align: center;
+
+        a {
+            font-size: 18px;
+            color: @nav;
+            line-height: 40px;
+            font-weight: bold;
+            overflow: hidden;
+            transition: all .5s;
+            margin: 0 18px;
+            padding: 0 8px;
+
+            &:hover {
+                color: @green;
+
+                &::after {
+                    width: 100%;
+                    left: 0%
+                }
+            }
+
+            &::after {
+                content: '';
+                width: 0;
+                height: 2px;
+                display: inline-block;
+                transition: .5s all;
+                border-radius: 4px;
+                background-color: @green;
+                box-sizing: border-box;
+                position: absolute;
+                bottom: 0;
+                left: 50%
+            }
+        }
+
+        .router-link-exact-active {
+            color: @green;
+
+            &::after {
+                width: 100%;
+                left: 0%;
+            }
+        }
+
+        .search {
+            margin-left: 30px;
+            width: 220px;
+        }
+    }
+}
+
+.footer {
+    background-color: @footer;
+    padding: 50px 0;
+    margin-top: 50px;
+
+    .unitname {
+        margin-bottom: 10px;
+        a {
+            padding: 0 20px;
+            border-right: 1px solid @nav;
+            color: @nav;
+            font-size: 13px;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+
+    .copy {
+        margin: 40px 0;
+        text-align: center;
+
+        p {
+            font-size: 13px;
+            color: @nav;
+            line-height: 30px;
+        }
+    }
+
+    .food_logo {
+        border-top: 1px solid @border;
+        margin-top: 40px;
+        padding-top: 40px;
+        text-align: center;
+
+        img {
+            width: 300px;
+        }
+    }
+}
+
+.title {
+    background-color: @titlebg;
+    padding: 0 20px;
+    line-height: 50px;
+    font-size: 22px;
+    color: @nav;
+    justify-content: left;
+
+    i {
+        font-size: 22px;
+        color: @green;
+    }
+}
+
+.content {
+    margin-top: 50px;
+
+    .content_left {
+        width: 730px;
+        display: block;
+        margin-right: 40px;
+
+        .food_new {
+            border: 1px solid @border;
+            border-radius: 6px;
+            overflow: hidden;
+            width: 100%;
+            background-color: @white;
+
+            i {
+                margin-right: 15px;
+            }
+
+            .survey {
+                padding: 20px;
+
+                .whatfood {
+                    border-bottom: 1px solid @border;
+                    padding-bottom: 20px;
+
+                    .whatfood_content {
+                        margin-right: 20px;
+
+                        h1 {
+                            font-size: 18px;
+                            font-weight: bold;
+                            line-height: 40px;
+                            color: @title;
+                        }
+
+                        p {
+                            font-size: 14px;
+                            line-height: 35px;
+                        }
+                    }
+
+                    img {
+                        width: 35%;
+                    }
+                }
+
+                .foodClass {
+                    padding: 20px 0;
+                    border-bottom: 1px solid @border;
+
+                    h1 {
+                        font-size: 18px;
+                        color: @title;
+                    }
+
+                    .foodlist {
+                        margin-top: 10px;
+
+                        li {
+                            margin-right: 15px;
+                            background-color: @footer;
+                            padding: 10px;
+                            border-radius: 6px;
+                            overflow: hidden;
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+
+                            img {
+                                width: 100%;
+                            }
+
+                            h1 {
+                                font-size: 20px;
+                                font-weight: bold;
+                                color: @green;
+                                margin: 15px 0;
+                                text-align: center;
+                            }
+
+                            p {
+                                font-size: 14px;
+                                color: @p;
+                                line-height: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .attesttion {
+            border-bottom: 1px solid @border;
+            padding-bottom: 20px;
+            align-items: center;
+
+            .attest_left {
+                margin-right: 30px;
+
+                li {
+                    padding: 10px 0;
+                    border-bottom: 1px solid @footer;
+                    &:last-child{
+                        border-bottom: none;
+                    }
+
+                    h1 {
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: @title;
+                        line-height: 30px;
+                    }
+                     p {
+                         -webkit-line-clamp: 2;
+                         font-size: 13px;
+                         color: @p;
+                         line-height: 20px;
+                     }
+                }
+            }
+            .attest_img{
+                width: 65%;
+                overflow: hidden;
+                border-radius: 6px;
+                img{
+                    width: 100%;
+                }
+                p{
+                    color: @white;
+                    position: absolute;
+                    bottom:0;
+                    left: 0;
+                    right: 0;
+                    padding: 10px 15px;
+                    line-height: 30px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    background-color: rgba(0,0,0,.5);
+                }
+            }
+        }
+    }
+
+    .content_right {
+        width: 350px;
+        display: block;
+    }
+
+}
