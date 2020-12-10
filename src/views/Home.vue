@@ -14,7 +14,7 @@
                           <div class="whatfood flex-center">
                               <div class="whatfood_content">
                                   <h1>什么是森林食品?</h1>
-                                  <p>作为大自然对人类的馈赠，森林食品以森林生态环境下生长动植物和微生物为原料，遵循动植物和微生物自然生长规律生产加工，并遵循可持续经营的原则，无人工合成添加物，具有原生态、无污染、健康、安全等特性的各类可食用的林产品。</p>
+                                  <p class="morefont">作为大自然对人类的馈赠，森林食品以森林生态环境下生长动植物和微生物为原料，遵循动植物和微生物自然生长规律生产加工，并遵循可持续经营的原则，无人工合成添加物，具有原生态、无污染、健康、安全等特性的各类可食用的林产品。</p>
                               </div>
                               <img src="../static/images/food1.png">
                           </div>
@@ -47,6 +47,7 @@
                   <div class="food_new" style="margin-top:30px">
                       <div class="flex-center title"><i class="icon iconfont icon-icon_zhinan" style="font-size:30px"></i>认证概况</div>
                       <div class="survey">
+                          <!--上 start-->
                           <div class="attesttion flex">
                               <ul class="attest_left">
                                   <li v-for="(item,index) in list" :key="index">
@@ -61,11 +62,39 @@
                                   <p class="font-hide">保护耕地 重视轮作 培养接班人</p>
                               </div>
                           </div>
+                          <!--上 end-->
+
+                          <!--下 start-->
+                          <div class="attesttion_content flex">
+                              <div class="attesttion_lsit flex-1" v-for="(test,index) in tests" :key="index">
+                                  <h1>{{test.title}}</h1>
+                                  <ul class="content_list">
+                                      <li v-for="content in test.contents" :key="content.id">
+                                          <router-link :to="{path:'/',query:{id:content.id}}" class="font-hide">{{content.text}}</router-link>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <!--下 end-->
                       </div>
                   </div>
                   <!--认证概况 end-->
               </div>
-              <div class="content_right right"></div>
+              <div class="content_right right">
+                  <!--最新公告 start-->
+                  <div class="notice">
+                      <div class="flex-center title"><i class="icon iconfont icon-gonggao"></i>最新公告</div>
+                      <ul class="newslist">
+                          <li v-for="notice in notices" :key="notice.id">
+                              <router-link :to="{path:'/',query:{id:notice.id}}" class="font-hide">{{notice.text}}</router-link>
+                          </li>
+                      </ul>
+                  </div>
+                  <!--最新公告 end-->
+                  <!--证书文件 start-->
+
+                  <!--证书文件 end-->
+              </div>
           </div>
           <!--content one end-->
       </div>
@@ -95,7 +124,36 @@ export default {
             {title:'中国森林食品认证管理办法',text:'中国林业生态发展促进会依据民政部核准的业务范围，经常务理事会研究决定，在全国范围内开展'},
             {title:'中国森林食品认证管理办法',text:'中国林业生态发展促进会依据民政部核准的业务范围，经常务理事会研究决定，在全国范围内开展'},
             {title:'中国森林食品认证管理办法',text:'中国林业生态发展促进会依据民政部核准的业务范围，经常务理事会研究决定，在全国范围内开展'}
+        ],
+        tests:[
+            {
+                title:'业内报道',
+                contents:[
+                    {text:'中国森林食品交易博览会在上海举办',id:1},
+                    {text:'中国森林食品交易博览会在上海举办',id:2},
+                    {text:'中国森林食品交易博览会在上海举办',id:7},
+                    {text:'中国森林食品交易博览会在上海举办',id:9},
+                ]
+            },
+            {
+                title:'行业动态',
+                contents:[
+                    {text:'中国森林食品交易博览会在上海举办',id:1},
+                    {text:'中国森林食品交易博览会在上海举办',id:21},
+                    {text:'中国森林食品交易博览会在上海举办',id:3},
+                    {text:'中国森林食品交易博览会在上海举办',id:4},
+                ]
+            }
+        ],
+        notices:[
+            {text:'中国森林食品交易博览会在上海举办',id:'22'},
+            {text:'中国森林食品交易博览会在上海举办',id:'22'},
+            {text:'中国森林食品交易博览会在上海举办',id:'22'},
+            {text:'中国森林食品交易博览会在上海举办',id:'22'},
+            {text:'中国森林食品交易博览会在上海举办',id:'22'},
+            {text:'中国森林食品交易博览会在上海举办',id:'22'}
         ]
+        
     };
   },
   created() {},

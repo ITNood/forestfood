@@ -6,6 +6,32 @@
 @white: white;
 @title: #5B5B5B;
 @p: #757575;
+::-webkit-scrollbar {
+    width: 5px;
+    max-height: 5px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #bdbdbd;
+}
+
+/*滑块效果*/
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.4);
+}
 
 * {
     padding: 0;
@@ -167,6 +193,7 @@ a {
 
     .unitname {
         margin-bottom: 10px;
+
         a {
             padding: 0 20px;
             border-right: 1px solid @nav;
@@ -255,6 +282,7 @@ a {
                         p {
                             font-size: 14px;
                             line-height: 35px;
+                            -webkit-line-clamp: 4;
                         }
                     }
 
@@ -320,8 +348,14 @@ a {
                 li {
                     padding: 10px 0;
                     border-bottom: 1px solid @footer;
-                    &:last-child{
+
+                    &:last-child {
                         border-bottom: none;
+                    }
+                    &:hover{
+                        h1{
+                            color: @green;
+                        }
                     }
 
                     h1 {
@@ -330,32 +364,74 @@ a {
                         color: @title;
                         line-height: 30px;
                     }
-                     p {
-                         -webkit-line-clamp: 2;
-                         font-size: 13px;
-                         color: @p;
-                         line-height: 20px;
-                     }
+
+                    p {
+                        -webkit-line-clamp: 2;
+                        font-size: 13px;
+                        color: @p;
+                        line-height: 20px;
+                    }
                 }
             }
-            .attest_img{
+
+            .attest_img {
                 width: 65%;
                 overflow: hidden;
                 border-radius: 6px;
-                img{
+
+                img {
                     width: 100%;
                 }
-                p{
+
+                p {
                     color: @white;
                     position: absolute;
-                    bottom:0;
+                    bottom: 0;
                     left: 0;
                     right: 0;
                     padding: 10px 15px;
                     line-height: 30px;
                     font-size: 16px;
                     font-weight: bold;
-                    background-color: rgba(0,0,0,.5);
+                    background-color: rgba(0, 0, 0, .5);
+                }
+            }
+        }
+
+        .attesttion_content {
+            margin-top: 20px;
+            align-items: left;
+
+            .attesttion_lsit {
+                margin-right: 20px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                h1 {
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 40px;
+                    color: @title;
+                }
+
+                ul {
+                    li {
+                        a {
+                            display: block;
+                            color: @p;
+                            line-height: 30px;
+                            font-size: 13px;
+                        }
+
+                        &:hover {
+                            a {
+                                color: @green;
+                            }
+                        }
+
+                    }
                 }
             }
         }
@@ -364,6 +440,27 @@ a {
     .content_right {
         width: 350px;
         display: block;
+        .notice{
+            border: 1px solid @border;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: @white;
+            .newslist{
+                padding: 20px;
+                li{
+                    a{
+                        color: @p;
+                        line-height: 35px;
+                        display: block;
+                    }
+                    &:hover{
+                        a{
+                            color:@green;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }
