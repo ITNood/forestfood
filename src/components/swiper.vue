@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div class="swiper-container">
+    <div class="swiper-container" id="banner">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(item, index) in items" :key="index"><img :src="item.img"></div>
+        <div class="swiper-slide" v-for="(item, index) in items" :key="index">
+          <div class="slidebg"><img :src="item.img"></div>
+        </div>
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
@@ -23,7 +25,7 @@ export default {
     return {};
   },
   mounted() {
-    var swiper = new Swiper(".swiper-container", {// eslint-disable-line no-unused-vars
+    var swiper = new Swiper("#banner", {// eslint-disable-line no-unused-vars
       pagination: {
         el: ".swiper-pagination",
         clickable: true,

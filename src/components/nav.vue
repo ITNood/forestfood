@@ -24,7 +24,7 @@ export default {
     return {
       value: "",
       items: [
-    { name: "首页", url: "/" },
+        { name: "首页", url: "/" },
         { name: "森林食品认证", url: "/food" },
         { name: "森林食品商城", url: "/mall" },
         { name: "行业新闻", url: "/news" },
